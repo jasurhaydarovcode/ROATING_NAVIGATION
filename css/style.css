@@ -1,0 +1,148 @@
+/* GLOBAL */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #333;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  background-color: #fafafa;
+  min-width: 100vw;
+  padding: 50px;
+  transition: transform 0.5s linear;
+  transform-origin: top left;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+.container.show-nav + .sitenav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+.circle {
+  background-color: #ff7979;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+.circle button {
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 26px;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.content {
+  max-width: 1000px;
+  width: 100%;
+  margin: 50px auto;
+}
+
+.content-heading {
+  margin: 0;
+}
+
+.content-author {
+  color: #555;
+  font-style: italic;
+}
+
+.content-text {
+  color: #333;
+  line-height: 1.5;
+}
+.contenet-img {
+  display: flex;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.sitenav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+}
+
+.sitenav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 30px;
+}
+
+.sitenav-item {
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+}
+
+.sitenav-list li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+
+.sitenav-list li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+
+.sitenav-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.sitenav-link:hover {
+  color: #ff7979;
+}
+
+.sitenav-link i {
+  margin-right: 10px;
+}
